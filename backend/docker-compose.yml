@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   database:
-    image: postgres
+    image: guilhermesantana/guilherme
     container_name: tutorial
     restart: always
     ports:
@@ -12,7 +12,7 @@ services:
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=notes
     volumes:
-      - pgdata:data/postgres
-  volumes:
-    pgdata:
-      driver: local
+      - pgdata:/data/postgres
+volumes:
+  pgdata:
+    driver: local
